@@ -27,8 +27,6 @@ namespace BlogPlatformWebApp.Pages.Posts
             
         //}
 
-        // TODO: Fix 'Read more' (length of content)
-
         public async Task OnGetAsync()
         {
             Username = HttpContext.Session.GetString("username")!;

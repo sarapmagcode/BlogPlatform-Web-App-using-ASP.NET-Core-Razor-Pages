@@ -24,21 +24,31 @@
 {
     <div class="card">
         <div class="card-body">
+
+            <!-- Username -->
             <p>@Html.DisplayFor(modelItem => item.Username)</p>
+
+            <!-- Date Created -->
             <p>Created: @Html.DisplayFor(modelItem => item.DateCreated)</p>
+
+            <!-- Date Edited -->
             @if (!item.DateCreated.ToString().Equals(item.DateEdited.ToString()))
             {
                 <p>Edited: @Html.DisplayFor(modelItem => item.DateEdited)</p>
             }
             <br />
 
+            <!-- Title -->
             <h3>
                 <a asp-page="./Details" asp-route-id="@item.Id" style="text-decoration: none;">
                 @Html.DisplayFor(modelItem => item.Title)
                 </a>
             </h3>
+
+            <!-- Read Time -->
             <p>@Html.DisplayFor(modelItem => item.ReadTimeInMinutes) min read</p>
 
+            <!-- Content -->
             <!-- Use pre-line to include new lines in text -->
             <p style="white-space: pre-line;">
                 @Html.DisplayFor(modelItem => item.Content) @if (item.Content!.Length >= 940)
@@ -47,6 +57,7 @@
                 }
             </p>
 
+            <!-- Topic -->
             <span class="badge bg-secondary">
                 @Html.DisplayFor(modelItem => item.Topic)
             </span>
