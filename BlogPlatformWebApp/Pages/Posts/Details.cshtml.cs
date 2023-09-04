@@ -23,6 +23,8 @@ namespace BlogPlatformWebApp.Pages.Posts
 
         public string? Username { get; set; }
 
+        // TODO: Fix details design
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Post == null)

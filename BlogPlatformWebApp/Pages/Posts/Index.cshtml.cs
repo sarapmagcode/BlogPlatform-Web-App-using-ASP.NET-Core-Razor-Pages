@@ -3,15 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using BlogPlatformWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Mvc.Diagnostics;
 
 namespace BlogPlatformWebApp.Pages.Posts
 {
     public class IndexModel : PageModel
     {
-        private readonly BlogPlatformWebApp.Data.BlogPlatformWebAppContext _context;
+        private readonly Data.BlogPlatformWebAppContext _context;
 
-        public IndexModel(BlogPlatformWebApp.Data.BlogPlatformWebAppContext context)
+        public IndexModel(Data.BlogPlatformWebAppContext context)
         {
             _context = context;
         }
@@ -22,10 +21,7 @@ namespace BlogPlatformWebApp.Pages.Posts
 
         public IList<Post> Post { get;set; } = default!;
 
-        //public void OnGet()
-        //{
-            
-        //}
+        // TODO: Filter and search functionalities
 
         public async Task OnGetAsync()
         {
@@ -33,7 +29,8 @@ namespace BlogPlatformWebApp.Pages.Posts
             if (Username.IsNullOrEmpty())
             {
                 IsLoggedIn = false;
-            } else
+            }
+            else
             {
                 IsLoggedIn = true;
             }

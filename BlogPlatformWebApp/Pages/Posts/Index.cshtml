@@ -11,13 +11,22 @@
     <a asp-page="Create">Write</a>
 </p>*@
 
+<style>
+    .logout {
+        color: white;
+        text-decoration: none;
+    }
+
+    .logout:hover {
+        color: white;
+    }
+</style>
+
 @if (Model.IsLoggedIn)
 {
-    <p>
-        Welcome, @Model.Username!
-    </p>
-    <a asp-page="Index" asp-page-handler="Logout">Logout</a>
-    <br />
+    <p>Welcome, <span class="text-primary">@Model.Username</span></p>
+    <a class="btn btn-outline-secondary" asp-page="Index" asp-page-handler="Logout">Logout</a>
+    <br /><br />
 }
 
 @foreach (var item in Model.Post)

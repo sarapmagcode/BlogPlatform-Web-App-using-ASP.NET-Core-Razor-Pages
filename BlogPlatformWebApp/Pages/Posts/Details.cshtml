@@ -5,9 +5,50 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+@* <h1>Details</h1> *@
 
-<div>
+<div class="container-sm w-75">
+    <!-- Title -->
+    <h2>@Html.DisplayFor(model => model.Post.Title)</h2>
+
+    <!-- Username -->
+    <p>By <span class="text-primary">@Html.DisplayFor(model => model.Post.Username)</span></p>
+
+    <!-- Read Time -->
+    <p>@Html.DisplayFor(model => model.Post.ReadTimeInMinutes) min read</p>
+
+    <!-- Date Created -->
+    <p>Created: @Html.DisplayFor(model => model.Post.DateCreated)</p>
+
+    <!-- Date Edited -->
+    @if (!Model.Post.DateEdited.ToString().Equals(Model.Post.DateCreated.ToString()))
+    {
+        <p>Edited: @Html.DisplayFor(model => model.Post.DateEdited)</p>
+    }
+
+    <!-- Content -->
+    <p style="white-space: pre-line; font-size: 20px;">
+        @Html.DisplayFor(model => model.Post.Content)
+    </p>
+
+    <!-- Topic -->
+    <span class="badge rounded-pill bg-secondary">
+        @Html.DisplayFor(model => model.Post.Topic)
+    </span>
+
+    <br /><br />
+    @if (Model.Username != null && Model.Username == Model.Post.Username)
+    {
+        <a asp-page="./Edit" asp-route-id="@Model.Post?.Id">Edit</a>
+        <p style="display: inline;">|</p>
+        <a asp-page="./Delete" asp-route-id="@Model.Post?.Id">Delete</a>
+        <p style="display: inline;">|</p>
+    }
+
+    <a asp-page="./Index">Back</a>
+</div>
+
+@* <div>
     <h4>Post</h4>
     <hr />
     <dl class="row">
@@ -83,3 +124,4 @@
 
     <a asp-page="./Index">Back to List</a>
 </div>
+ *@
