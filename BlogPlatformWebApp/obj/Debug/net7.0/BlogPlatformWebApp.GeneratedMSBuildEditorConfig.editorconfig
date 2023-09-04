@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlogPlatformWebApp
+build_property.RootNamespace = BlogPlatformWebApp
+build_property.ProjectDir = C:\Users\Jason\source\repos\BlogPlatformWebApp\BlogPlatformWebApp\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Jason\source\repos\BlogPlatformWebApp\BlogPlatformWebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Posts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Posts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Posts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Posts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Posts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Signup/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Signup/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Signup/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Signup/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Signup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jason/source/repos/BlogPlatformWebApp/BlogPlatformWebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kusqb73axt

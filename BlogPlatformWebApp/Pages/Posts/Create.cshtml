@@ -1,0 +1,71 @@
+﻿@page
+@model BlogPlatformWebApp.Pages.Posts.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="container">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="Post.Username" class="control-label"></label>
+                <input asp-for="Post.Username" class="form-control" />
+                <span asp-validation-for="Post.Username" class="text-danger"></span>
+            </div> *@
+
+            <!-- Date (Remove this) -->
+            @* <div class="form-group">
+                <label asp-for="Post.Date" class="control-label"></label>
+                <input asp-for="Post.Date" class="form-control" />
+                <span asp-validation-for="Post.Date" class="text-danger"></span>
+            </div> *@
+
+            <!-- Title -->
+            <div class="form-group">
+                <label asp-for="Post.Title" class="control-label"></label>
+                <input asp-for="Post.Title" class="form-control" />
+                <span asp-validation-for="Post.Title" class="text-danger"></span>
+            </div>
+
+            <!-- Content -->
+            <div class="form-group">
+                <label asp-for="Post.Content" class="control-label"></label>
+                <textarea asp-for="Post.Content" class="form-control" rows="15"></textarea>
+                <span asp-validation-for="Post.Content" class="text-danger"></span>
+            </div>
+
+            <!-- Topic -->
+            <div class="form-group">
+                <label asp-for="Post.Topic" class="control-label"></label>
+                <input asp-for="Post.Topic" class="form-control" />
+                <span asp-validation-for="Post.Topic" class="text-danger"></span>
+            </div>
+
+            <!-- Minutes (Remove this) -->
+            @* <div class="form-group">
+                <label asp-for="Post.Minutes" class="control-label"></label>
+                <input asp-for="Post.Minutes" class="form-control" />
+                <span asp-validation-for="Post.Minutes" class="text-danger"></span>
+            </div> *@
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

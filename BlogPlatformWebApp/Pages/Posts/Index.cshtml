@@ -1,0 +1,106 @@
+﻿@page
+@model BlogPlatformWebApp.Pages.Posts.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>*@
+
+@*<p>
+    <a asp-page="Create">Write</a>
+</p>*@
+
+@if (Model.IsLoggedIn)
+{
+    <p>
+        Welcome, @Model.Username!
+    </p>
+    <a asp-page="Index" asp-page-handler="Logout">Logout</a>
+    <br />
+}
+
+@foreach (var item in Model.Post)
+{
+    <div class="card">
+        <div class="card-body">
+            <p>@Html.DisplayFor(modelItem => item.Username)</p>
+            <p>Created: @Html.DisplayFor(modelItem => item.DateCreated)</p>
+            @if (!item.DateCreated.ToString().Equals(item.DateEdited.ToString()))
+            {
+                <p>Edited: @Html.DisplayFor(modelItem => item.DateEdited)</p>
+            }
+            <br />
+
+            <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+            <p>@Html.DisplayFor(modelItem => item.ReadTimeInMinutes) min read</p>
+
+            <!-- Use pre-line to include new lines in text -->
+            <p style="white-space: pre-line">
+                @Html.DisplayFor(modelItem => item.Content)
+                <a asp-page="./Details" asp-route-id="@item.Id">Read more</a>
+            </p>
+            <br />
+
+            <span class="badge bg-secondary">
+                @Html.DisplayFor(modelItem => item.Topic)
+            </span>
+        </div>
+    </div>
+    <br />
+}
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Topic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Minutes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Post) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Minutes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
