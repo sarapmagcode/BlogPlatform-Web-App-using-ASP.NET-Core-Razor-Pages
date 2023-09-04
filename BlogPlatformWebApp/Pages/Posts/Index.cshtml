@@ -32,15 +32,20 @@
             }
             <br />
 
-            <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+            <h3>
+                <a asp-page="./Details" asp-route-id="@item.Id" style="text-decoration: none;">
+                @Html.DisplayFor(modelItem => item.Title)
+                </a>
+            </h3>
             <p>@Html.DisplayFor(modelItem => item.ReadTimeInMinutes) min read</p>
 
             <!-- Use pre-line to include new lines in text -->
-            <p style="white-space: pre-line">
-                @Html.DisplayFor(modelItem => item.Content)
-                <a asp-page="./Details" asp-route-id="@item.Id">Read more</a>
+            <p style="white-space: pre-line;">
+                @Html.DisplayFor(modelItem => item.Content) @if (item.Content!.Length >= 940)
+                {
+                    <a asp-page="./Details" asp-route-id="@item.Id">Read more</a>
+                }
             </p>
-            <br />
 
             <span class="badge bg-secondary">
                 @Html.DisplayFor(modelItem => item.Topic)

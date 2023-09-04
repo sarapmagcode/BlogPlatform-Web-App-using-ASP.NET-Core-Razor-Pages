@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using BlogPlatformWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Mvc.Diagnostics;
 
 namespace BlogPlatformWebApp.Pages.Posts
 {
@@ -15,7 +16,7 @@ namespace BlogPlatformWebApp.Pages.Posts
             _context = context;
         }
 
-        public string Username { get; set; }
+        public string? Username { get; set; }
 
         public bool IsLoggedIn { get; set; }
 
@@ -42,6 +43,13 @@ namespace BlogPlatformWebApp.Pages.Posts
             if (_context.Post != null)
             {
                 Post = await _context.Post.ToListAsync();
+                foreach (var post in Post)
+                {
+                    if (post.Content!.Length >= 940)
+                    {
+                        post.Content = post.Content![..940] + "...";
+                    }
+                }
             }
         }
 
