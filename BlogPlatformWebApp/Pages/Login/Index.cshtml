@@ -5,31 +5,33 @@
 
 }
 
-<form method="post" asp-page="Index">
+<div class="col-md-4">
+    <form method="post" asp-page="Index">
     
-    <!-- Username -->
-    <div class="mb-3">
-        <label class="form-label">Username</label>
-        <input type="text" asp-for="@Model.Username" class="form-control">
-    </div>
-
-    <!-- Password -->
-    <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" asp-for="@Model.Password" class="form-control">
-    </div>
-
-    <!-- Message -->
-    @if (Model.Message != null)
-    {
-        <div class="alert alert-danger" role="alert">
-            @Model.Message
+        <!-- Username -->
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" asp-for="@Model.Username" class="form-control">
         </div>
-    }
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <!-- Password -->
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" asp-for="@Model.Password" class="form-control">
+        </div>
 
-<br />
-<p>Don't have an account yet?</p>
-<a asp-page="/Signup/Create">Sign up</a>
+        <!-- Message -->
+        @if (Model.Message != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @Model.Message
+            </div>
+        }
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <br />
+    <p>Don't have an account yet?</p>
+    <a asp-page="/Signup/Create">Sign up</a>
+</div>
