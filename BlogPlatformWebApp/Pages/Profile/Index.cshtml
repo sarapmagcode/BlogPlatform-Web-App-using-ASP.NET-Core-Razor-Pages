@@ -1,0 +1,61 @@
+﻿@page
+@model BlogPlatformWebApp.Pages.Profile.IndexModel
+@{
+}
+
+<style>
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="container">
+    <div class="row align-items-start">
+
+        <!-- Posts -->
+        <div class="col">
+            @foreach (var item in Model.Post)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h5>
+                            <a asp-page="/Posts/Details" asp-route-id="@item.Id" style="text-decoration: none;">
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </a>
+                        </h5>
+
+                        <!-- Read Time -->
+                        <p>@Html.DisplayFor(modelItem => item.ReadTimeInMinutes) min read</p>
+
+                        <!-- Content -->
+                        <!-- Use pre-line to include new lines in text -->
+                        <p style="white-space: pre-line;">
+                            @Html.DisplayFor(modelItem => item.Content) @if (item.Content!.Length >= 400)
+                            {
+                                <a asp-page="/Posts/Details" asp-route-id="@item.Id">Read more</a>
+                            }
+                        </p>
+
+                        <!-- Topic -->
+                        <span class="badge bg-secondary">
+                            @Html.DisplayFor(modelItem => item.Topic)
+                        </span>
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+
+        <!-- User info -->
+        <div class="col-3">
+            <img src="/images/profile-icon.png" class="img-thumbnail profile-picture" alt="profile">
+            <h5>@Model.User.FirstName @Model.User.LastName</h5>
+            <small class="text-muted">@Model.User.Username</small> <br />
+            <small class="text-muted">@Model.User.Email</small> <br />
+            <small class="text-muted">Joined: @Html.DisplayFor(modelItem => Model.User.AccountCreated)</small> <br />
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DACPpQaDc1Q8eP2B8dc2euPkiISypBokIm7ff1c6ID4=",
+  "Hash": "Pnk32jPHGzBWd/HVb/bVanO9tngN752mvssOzn7turg=",
   "Source": "BlogPlatformWebApp",
   "BasePath": "_content/BlogPlatformWebApp",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Jason\\source\\repos\\BlogPlatformWebApp\\BlogPlatformWebApp\\wwwroot\\images\\profile-icon.png",
+      "SourceId": "BlogPlatformWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jason\\source\\repos\\BlogPlatformWebApp\\BlogPlatformWebApp\\wwwroot\\",
+      "BasePath": "_content/BlogPlatformWebApp",
+      "RelativePath": "images/profile-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profile-icon.png"
     },
     {
       "Identity": "C:\\Users\\Jason\\source\\repos\\BlogPlatformWebApp\\BlogPlatformWebApp\\wwwroot\\js\\site.js",

@@ -5,6 +5,12 @@
     ViewData["Title"] = "Details";
 }
 
+<style>
+    .username {
+        text-decoration: none;
+    }
+</style>
+
 @* <h1>Details</h1> *@
 
 <div class="container-sm w-75">
@@ -12,7 +18,7 @@
     <h2>@Html.DisplayFor(model => model.Post.Title)</h2>
 
     <!-- Username -->
-    <p>By <span class="text-primary">@Html.DisplayFor(model => model.Post.Username)</span></p>
+    <p>By <a class="username" asp-page="/Profile/Index" asp-route-username="@Model.Post.Username">@Html.DisplayFor(model => model.Post.Username)</a></p>
 
     <!-- Read Time -->
     <p>@Html.DisplayFor(model => model.Post.ReadTimeInMinutes) min read</p>
@@ -32,7 +38,7 @@
     </p>
 
     <!-- Topic -->
-    <span class="badge rounded-pill bg-secondary">
+    <span class="badge bg-secondary">
         @Html.DisplayFor(model => model.Post.Topic)
     </span>
 

@@ -35,7 +35,8 @@
         <div class="card-body">
 
             <!-- Username -->
-            <p>@Html.DisplayFor(modelItem => item.Username)</p>
+            @* <p>@Html.DisplayFor(modelItem => item.Username)</p> *@
+            <a style="text-decoration: none;" asp-page="/Profile/Index" asp-route-username="@item.Username">@Html.DisplayFor(modelItem => item.Username)</a>
 
             <!-- Date Created -->
             <p>Created: @Html.DisplayFor(modelItem => item.DateCreated)</p>

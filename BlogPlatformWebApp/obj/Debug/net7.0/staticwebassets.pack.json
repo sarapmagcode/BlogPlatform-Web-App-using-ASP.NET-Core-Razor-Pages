@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Jason\\source\\repos\\BlogPlatformWebApp\\BlogPlatformWebApp\\wwwroot\\images\\profile-icon.png",
+      "PackagePath": "staticwebassets\\images\\profile-icon.png"
+    },
+    {
       "Id": "C:\\Users\\Jason\\source\\repos\\BlogPlatformWebApp\\BlogPlatformWebApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
