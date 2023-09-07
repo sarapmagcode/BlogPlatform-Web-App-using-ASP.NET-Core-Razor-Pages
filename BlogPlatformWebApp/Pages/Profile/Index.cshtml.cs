@@ -20,6 +20,8 @@ namespace BlogPlatformWebApp.Pages.Profile
 
         public IList<Post> Post { get; set; } = default!;
 
+        public IEnumerable<Post> sortedPostList;
+
         public async Task<IActionResult> OnGetAsync(string? username)
         {
             string? loggedInUser = HttpContext.Session.GetString("username");
@@ -57,6 +59,9 @@ namespace BlogPlatformWebApp.Pages.Profile
                 postList = postList.Where(post => post.Username == username);
 
                 Post = await postList.ToListAsync();
+
+                sortedPostList = Post.OrderBy(p => p.DateCreated).Reverse();
+                Post = sortedPostList.ToList();
 
                 foreach (var post in Post)
                 {

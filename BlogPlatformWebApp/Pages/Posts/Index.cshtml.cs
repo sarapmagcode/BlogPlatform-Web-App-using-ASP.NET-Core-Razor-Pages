@@ -21,7 +21,10 @@ namespace BlogPlatformWebApp.Pages.Posts
 
         public IList<Post> Post { get;set; } = default!;
 
+        public IEnumerable<Post> sortedPostList;
+
         // TODO: Filter and search functionalities
+        // TODO: Place <div> tag inside <a> tag for posts
 
         public async Task OnGetAsync()
         {
@@ -38,6 +41,10 @@ namespace BlogPlatformWebApp.Pages.Posts
             if (_context.Post != null)
             {
                 Post = await _context.Post.ToListAsync();
+
+                sortedPostList = Post.OrderBy(p => p.DateCreated).Reverse();
+                Post = sortedPostList.ToList();
+
                 foreach (var post in Post)
                 {
                     if (post.Content!.Length >= 940)
