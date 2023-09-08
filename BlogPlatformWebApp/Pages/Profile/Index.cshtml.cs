@@ -22,15 +22,17 @@ namespace BlogPlatformWebApp.Pages.Profile
 
         public IEnumerable<Post> sortedPostList;
 
+        public string? LoggedInUser { get; set; }
+
         public async Task<IActionResult> OnGetAsync(string? username)
         {
-            string? loggedInUser = HttpContext.Session.GetString("username");
-            if (username.IsNullOrEmpty() && loggedInUser.IsNullOrEmpty())
+            LoggedInUser = HttpContext.Session.GetString("username");
+            if (username.IsNullOrEmpty() && LoggedInUser.IsNullOrEmpty())
             {
                 return RedirectToPage("/Login/Index");
             }
             
-            if (!username.IsNullOrEmpty() && username!.Equals(loggedInUser))
+            if (!username.IsNullOrEmpty() && username!.Equals(LoggedInUser))
             {
                 username = "";
                 return RedirectToPage("/Profile/Index");
@@ -38,7 +40,7 @@ namespace BlogPlatformWebApp.Pages.Profile
 
             if (username.IsNullOrEmpty())
             {
-                username = loggedInUser;
+                username = LoggedInUser;
             }
 
             var user = await _context.User.FirstOrDefaultAsync(m => m.Username == username);
@@ -73,6 +75,17 @@ namespace BlogPlatformWebApp.Pages.Profile
             }
 
             return Page();
+        }
+
+        public IActionResult OnGetLogout()
+        {
+            // Clear only a specific key:
+            //HttpContext.Session.Remove("username");
+
+            // Clear all keys:
+            HttpContext.Session.Clear();
+
+            return RedirectToPage("/Login/Index");
         }
     }
 }

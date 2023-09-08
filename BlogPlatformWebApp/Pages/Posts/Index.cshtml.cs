@@ -23,7 +23,10 @@ namespace BlogPlatformWebApp.Pages.Posts
 
         public IEnumerable<Post> sortedPostList;
 
-        // TODO: Filter and search functionalities
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        // TODO: Filter functionality
         // TODO: Place <div> tag inside <a> tag for posts
 
         public async Task OnGetAsync()
@@ -40,7 +43,15 @@ namespace BlogPlatformWebApp.Pages.Posts
 
             if (_context.Post != null)
             {
-                Post = await _context.Post.ToListAsync();
+                var posts = from p in _context.Post
+                            select p;
+
+                if (!string.IsNullOrEmpty(SearchString))
+                {
+                    posts = posts.Where(p => p.Title!.Contains(SearchString));
+                }
+
+                Post = await posts.ToListAsync();
 
                 sortedPostList = Post.OrderBy(p => p.DateCreated).Reverse();
                 Post = sortedPostList.ToList();
@@ -53,17 +64,6 @@ namespace BlogPlatformWebApp.Pages.Posts
                     }
                 }
             }
-        }
-
-        public IActionResult OnGetLogout()
-        {
-            // Clear only a specific key:
-            //HttpContext.Session.Remove("username");
-
-            // Clear all keys:
-            HttpContext.Session.Clear();
-
-            return RedirectToPage("/Login/Index");
         }
     }
 }

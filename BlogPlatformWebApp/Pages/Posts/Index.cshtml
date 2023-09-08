@@ -22,12 +22,27 @@
     }
 </style>
 
-@if (Model.IsLoggedIn)
-{
-    <p>Welcome, <span class="text-primary">@Model.Username</span></p>
-    <a class="btn btn-outline-secondary" asp-page="Index" asp-page-handler="Logout">Logout</a>
-    <br /><br />
-}
+<div class="container mb-3 p-0">
+    <div class="row align-items-center">
+        @{
+            bool isLoggedIn = false; 
+        }
+        @if (Model.IsLoggedIn)
+        {
+            isLoggedIn = true;
+            <div class="col d-flex">
+                <p class="mb-0">Welcome, <span class="text-primary">@Model.Username</span></p>
+            </div>
+        }
+
+        <div class="col">
+            <form class="@(isLoggedIn ? "d-flex justify-content-end" : "w-50 d-flex justify-content-end")">
+                <input class="form-control me-2" type="text" asp-for="SearchString" />
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 @foreach (var item in Model.Post)
 {
