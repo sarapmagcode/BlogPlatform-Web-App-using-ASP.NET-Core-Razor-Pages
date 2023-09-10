@@ -36,7 +36,10 @@
         }
 
         <div class="col">
-            <form class="@(isLoggedIn ? "d-flex justify-content-end" : "w-50 d-flex justify-content-end")">
+            <form class="@(isLoggedIn ? "d-flex justify-content-end" : "w-75 d-flex justify-content-end")">
+                <select class="form-select w-25 me-2" asp-for="PostTopic" asp-items="Model.Topics">
+                    <option value="">All</option>
+                </select>
                 <input class="form-control me-2" type="text" asp-for="SearchString" />
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>

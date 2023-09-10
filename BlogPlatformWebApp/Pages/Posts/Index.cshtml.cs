@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using BlogPlatformWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BlogPlatformWebApp.Pages.Posts
 {
@@ -26,8 +27,10 @@ namespace BlogPlatformWebApp.Pages.Posts
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
 
-        // TODO: Filter functionality
-        // TODO: Place <div> tag inside <a> tag for posts
+        public SelectList? Topics { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? PostTopic { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -43,6 +46,10 @@ namespace BlogPlatformWebApp.Pages.Posts
 
             if (_context.Post != null)
             {
+                IQueryable<string> topicQuery = from p in _context.Post
+                                                orderby p.Topic
+                                                select p.Topic;
+
                 var posts = from p in _context.Post
                             select p;
 
@@ -51,7 +58,13 @@ namespace BlogPlatformWebApp.Pages.Posts
                     posts = posts.Where(p => p.Title!.Contains(SearchString));
                 }
 
+                if (!string.IsNullOrEmpty(PostTopic))
+                {
+                    posts = posts.Where(p => p.Topic == PostTopic);
+                }
+
                 Post = await posts.ToListAsync();
+                Topics = new SelectList(await topicQuery.Distinct().ToListAsync());
 
                 sortedPostList = Post.OrderBy(p => p.DateCreated).Reverse();
                 Post = sortedPostList.ToList();
