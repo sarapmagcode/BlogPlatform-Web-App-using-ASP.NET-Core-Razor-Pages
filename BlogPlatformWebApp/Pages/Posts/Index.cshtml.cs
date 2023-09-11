@@ -32,6 +32,10 @@ namespace BlogPlatformWebApp.Pages.Posts
         [BindProperty(SupportsGet = true)]
         public string? PostTopic { get; set; }
 
+        // TODO: Like feature
+        // TODO: Upload picture in profile
+        // TODO: Comment feature
+
         public async Task OnGetAsync()
         {
             Username = HttpContext.Session.GetString("username")!;

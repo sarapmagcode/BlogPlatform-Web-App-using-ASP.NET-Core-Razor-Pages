@@ -17,5 +17,7 @@ namespace BlogPlatformWebApp.Data
         public DbSet<BlogPlatformWebApp.Models.Post> Post { get; set; } = default!;
 
         public DbSet<BlogPlatformWebApp.Models.User> User { get; set; } = default!;
+
+        public DbSet<BlogPlatformWebApp.Models.PostLike> PostLike { get; set; } = default!;
     }
 }
